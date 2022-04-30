@@ -1,22 +1,54 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Register.css';
-import registImg from '../../images/formimg/regist2.png';
+import auth from '../../firebase.init';
+import signupimg from '../../images/formimg/regist2.png';
+import LoadingPage from '../LoadingPage/LoadingPage';
 
 const Register = () => {
-    const navigate = useNavigate();
-    const navigateLogin = () => {
-        navigate("/login")
-    }
-    return (
-        <div className='container'>
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword, user, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  const [updateProfile, updating] = useUpdateProfile(auth);
+
+  const navigateLogin = () => {
+    navigate("/login");
+  };
+
+  if (loading || updating) {
+    return <LoadingPage></LoadingPage>
+  }
+
+  if (user) {
+    console.log('user', user);
+  }
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    console.log('Updated profile');
+
+    navigate('/home')
+  };
+
+
+  return (
+    <div className='container'>
       <div className='signup-container'>
         <div className='signup-img'>
-          <img src={registImg} alt="" />
+          <img src={signupimg} alt="" />
         </div>
         <div className="register-form-container">
           <h2>Please Register </h2>
-          <form>
+          <form onSubmit={handleRegister}>
             <input type="text" name="name" placeholder="Enter Your Name" />
 
             <input type="email" name="email" id="" placeholder="Enter Your Email" required />
@@ -30,7 +62,7 @@ const Register = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Register;
