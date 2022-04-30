@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Inventory.css';
 
 const Inventory = ({ inventory }) => {
-    const { name, picture, body, quantity, price, suplier } = inventory;
+    const {_id, name, picture, body, quantity, price, suplier } = inventory;
     console.log(inventory);
+
+    const navigate = useNavigate();
+    const navigateSingleInventory = id => {
+        navigate(`/inventory/${id}`);
+    }
+
     return (
         <div className="col-md-4">
             <div className="card">
@@ -16,7 +23,7 @@ const Inventory = ({ inventory }) => {
                     <p className="card-text">
                         {body}
                     </p>
-                    <button className='btn_1'>Manage</button>
+                    <button onClick={() => navigateSingleInventory(_id)} className='btn_1'>Manage</button>
                 </div>
             </div>
         </div>
