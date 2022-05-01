@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import loginimage from '../../images/formimg/regist3.png';
 import './Login.css';
 import LoadingPage from '../LoadingPage/LoadingPage';
+import SocialLogin from '../SocialLogin/SocialLogin';
+
 
 
 const Login = () => {
@@ -99,6 +101,7 @@ const Login = () => {
 
          <p>
            Forget Password? <button  to="/register" className="btn btn-link text-primary pe-auto text-decoration-none" onClick={resetPassword}  >Reset Password </button> </p>
+           <SocialLogin></SocialLogin>
            <ToastContainer />
        </div>
          </div>

@@ -1,10 +1,12 @@
 import React from 'react';
+import errorimg from "../../images/errorimages/error-1.png";
+import './NotFound.css';
 
 const NotFound = () => {
     return (
-        <div>
-            <h3>This is not found page
-            </h3>
+        <div className='container'>
+            <h3>Oops!!!! Page Not Found</h3>
+            <img src={errorimg} alt="" />
         </div>
     );
 };

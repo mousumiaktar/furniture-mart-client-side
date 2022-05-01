@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Inventory from '../Inventory/Inventory';
+import './Home.css';
 
 const Home = () => {
     const [inventories, setInventories] = useState([]);
@@ -10,6 +12,12 @@ const Home = () => {
         .then(res => res.json())
         .then(data => setInventories(data));
     },[])
+
+    const navigate = useNavigate();
+    const handleAddInventory = () => {
+        navigate('/addinventory');
+    }
+
     return (
         <div>
             <Banner></Banner>
@@ -23,7 +31,7 @@ const Home = () => {
             }
             </div>
         </div>
-            
+            <button onClick={handleAddInventory} className='btn_2'>Add New Item</button>
         </div>
     );
 };

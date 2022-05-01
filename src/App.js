@@ -8,6 +8,10 @@ import SingleInventory from './components/SingleInventory/SingleInventory';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import SocialLogin from './components/SocialLogin/SocialLogin';
+import NotFound from './components/NotFound/NotFound';
+import AddInventory from './components/AddInventory/AddInventory';
+import ManageItem from './components/ManageItem/ManageItem';
 
 function App() {
   return (
@@ -21,9 +25,14 @@ function App() {
             <SingleInventory></SingleInventory>
           </RequireAuth>
         }></Route>
+        <Route path="/manageitem" element={<ManageItem></ManageItem>
+        }></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/sociallogin" element={<SocialLogin></SocialLogin>}></Route>
+        <Route path="/addinventory" element={<AddInventory></AddInventory>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
