@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
+import useInventories from '../hooks/useInventories';
 import Inventory from '../Inventory/Inventory';
 import './Home.css';
 
 const Home = () => {
-    const [inventories, setInventories] = useState([]);
-
-    useEffect( () => {
-        fetch('http://localhost:5000/inventory')
-        .then(res => res.json())
-        .then(data => setInventories(data));
-    },[])
+    const [inventories, setInventories] = useInventories();
 
     const navigate = useNavigate();
     const handleAddInventory = () => {
@@ -25,7 +20,7 @@ const Home = () => {
             <h3>This is inventory:{inventories.length}</h3>
             <div className='row gy-5'>
             {
-                inventories.map(inventory => <Inventory key={inventory._id}
+                inventories.slice(0, 6).map(inventory => <Inventory key={inventory._id}
                 inventory={inventory}
                 ></Inventory>)
             }
