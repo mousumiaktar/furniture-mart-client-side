@@ -1,0 +1,5 @@
+@media screen and (max-width: 600px) {
+    .login-container img{
+        width: 300px;
+    }
+}

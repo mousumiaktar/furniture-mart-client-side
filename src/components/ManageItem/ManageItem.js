@@ -6,9 +6,8 @@ const ManageItem = () => {
     const [inventories, setInventories] = useInventories();
     return (
         <div>
-            <h3>This is manage items</h3>
+            <h2 className='category-title'><i>Our all management items</i></h2>
             <div className='container'>
-            <h3>This is inventory:{inventories.length}</h3>
             <div className='row gy-5'>
             {
                 inventories.map(inventory => <ManageAllItems key={inventory._id}

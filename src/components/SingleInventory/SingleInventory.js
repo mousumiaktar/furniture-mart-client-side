@@ -30,6 +30,7 @@ const SingleInventory = () => {
             
                 <div className='sinleItem-info'>
                     <h2>{inventory.name}</h2>
+                    <p>Id: {inventory._id}</p>
                     <p>{inventory.body}</p>
                     <h5>Suplier Name: {inventory.suplier}</h5>
                     <p>Price: <small>${inventory.price}</small></p>

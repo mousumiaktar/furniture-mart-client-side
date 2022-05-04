@@ -1,4 +1,11 @@
-.banner-area img{
+.banner-area img {
     width: 100%;
     height: 550px;
+}
+
+@media screen and (max-width: 600px) {
+    .banner-area img {
+        width: 100%;
+        height: 400px;
+    }
 }
