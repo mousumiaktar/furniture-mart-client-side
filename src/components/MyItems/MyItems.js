@@ -33,7 +33,6 @@ const MyItems = () => {
                                 <h5>{inventory.name}</h5>
                                 <p><small>price: {inventory.price}</small></p>
                             </div>
-
                             <div>
                                 <button onClick={() => handleButton(inventory._id)}>Delete</button>
                             </div>

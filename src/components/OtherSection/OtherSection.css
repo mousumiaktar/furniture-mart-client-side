@@ -1,0 +1,15 @@
+.other-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.single-container{
+    text-align: center;
+}
+.single-container h3{
+    color: black;
+}
+.other-container img{
+    height: 50px;
+    border-radius: 100%;
+}

@@ -4,14 +4,15 @@ import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
 import useInventories from '../hooks/useInventories';
 import Inventory from '../Inventory/Inventory';
+import OtherSection from '../OtherSection/OtherSection';
 import './Home.css';
 
 const Home = () => {
     const [inventories, setInventories] = useInventories();
 
     const navigate = useNavigate();
-    const handleAddInventory = () => {
-        navigate('/addinventory');
+    const handleManageInventory = () => {
+        navigate('/manageitem');
     }
 
     return (
@@ -28,7 +29,8 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <button onClick={handleAddInventory} className='btn_2'>Add New Item</button>
+            <button onClick={handleManageInventory} className='btn_2'>Manage Item</button>
+            <OtherSection></OtherSection>
         </div>
     );
 };
