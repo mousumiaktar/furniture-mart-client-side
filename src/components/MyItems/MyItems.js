@@ -1,10 +1,15 @@
-import React from 'react';
-import useInventories from '../hooks/useInventories';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import './MyItems.css';
 
 const MyItems = () => {
-    const [inventories, setInventories] = useInventories();
-
+    const [inventories, setInventories] = useState([]);
+    console.log(inventories);
+    // ===========================================
+        const [user] =useAuthState(auth);
+    // ===========================================
     const handleButton = id => {
         const proceed = window.confirm('Do you want to delete?');
         if (proceed) {
@@ -21,6 +26,23 @@ const MyItems = () => {
 
         }
     }
+
+// ============================================
+    useEffect( () => {
+        const getItems = async() =>{
+            const email = user.email;
+            const url = `http://localhost:5000/inventories?email=${email}`;
+            if(email){
+                const {data} = await axios.get(url);
+            setInventories(data)
+            }
+        }
+        getItems();
+    },[user])
+// ============================================
+
+
+
 
     return (
         <div className='container'>

@@ -13,6 +13,7 @@ import NotFound from './components/NotFound/NotFound';
 import AddInventory from './components/AddInventory/AddInventory';
 import ManageItem from './components/ManageItem/ManageItem';
 import MyItems from './components/MyItems/MyItems';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
       </Routes>
       </div>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }
