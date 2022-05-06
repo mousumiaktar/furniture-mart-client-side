@@ -6,14 +6,14 @@ import {getAuth} from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDfTDEA3t9oEDb68k6Jg56IZF2F7NYbSe4",
-  authDomain: "fashion-mart-6b696.firebaseapp.com",
-  projectId: "fashion-mart-6b696",
-  storageBucket: "fashion-mart-6b696.appspot.com",
-  messagingSenderId: "308455262435",
-  appId: "1:308455262435:web:18cb20462944dcc7279dd6"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
+  
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
