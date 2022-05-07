@@ -25,7 +25,8 @@
  }
  .all-manage-items-info button{
      border-radius: 5px;
-     background-color: antiquewhite;
+     background-color: rgb(78, 113, 128);
+     color: white;
      border: none;
      font-size: 14px;
  }
@@ -36,8 +37,12 @@
     .all-manage-items{
         display: block;
         align-items: center;
+        margin-left: 0;
     }
     .all-manage-items img{
-        margin-right: 50px;
+        /* margin-right: 50px; */
+    }
+    .all-manage-items-info{
+        text-align: center;
     }
 }

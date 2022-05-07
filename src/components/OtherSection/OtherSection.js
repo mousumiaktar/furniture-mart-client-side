@@ -8,7 +8,7 @@ const OtherSection = () => {
     return (
         <div className='container mt-5'>
             <div className='other-section-container mt-5 mb-5'>
-                <h2>Available at this Store</h2>
+                <h2 className='mb-5'><b><i>Testimonials</i></b></h2>
                 <div className='other-container'>
                     <div className='single-container'>
                         <img src={testimonial1} alt="" />

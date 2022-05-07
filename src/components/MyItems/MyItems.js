@@ -33,7 +33,11 @@ const MyItems = () => {
             const email = user.email;
             const url = `http://localhost:5000/inventories?email=${email}`;
             if(email){
-                const {data} = await axios.get(url);
+                const {data} = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
             setInventories(data)
             }
         }
@@ -46,7 +50,8 @@ const MyItems = () => {
 
     return (
         <div className='container'>
-            <h2>Chosse Your Inventory</h2>
+            <h2>Choose your inventory</h2>
+            <h5>{user.email}</h5>
             <div className='allitems-container'>
                 {
                     inventories.map(inventory => <div key={inventory._id}>

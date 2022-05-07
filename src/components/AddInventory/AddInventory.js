@@ -26,7 +26,8 @@ const AddInventory = () => {
     return (
         <div className='w-50 mx-auto'>
             <h4>{user.displayName}</h4>
-            <h4>Please Add Your New Inventory{user.email}</h4>
+            <h6>{user.email}</h6>
+            <h4>Please Add Your New Inventory</h4>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <input className='mb-2' placeholder='Suplier Name' {...register("suplier", { required: true, maxLength: 20 })} />

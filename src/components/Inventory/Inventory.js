@@ -13,6 +13,7 @@ const Inventory = ({ inventory }) => {
 
     return (
         <div className="col-md-4">
+            <div className='inventory-section-container'>
             <div className="card">
                 <img src={picture} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -25,6 +26,7 @@ const Inventory = ({ inventory }) => {
                     </p>
                     <button onClick={() => navigateSingleInventory(_id)} className='btn_1'>Manage</button>
                 </div>
+            </div>
             </div>
         </div>
     );

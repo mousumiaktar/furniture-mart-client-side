@@ -1,0 +1,15 @@
+.blog-title{
+    text-align: left;
+    color: black;
+    font-size: 20px;
+}
+.blog-description{
+    text-align: left;
+}
+.difference-container h5{
+    text-align: left;
+    margin-left: 20px;
+}
+.difference-container ul li{
+    text-align: left;
+}

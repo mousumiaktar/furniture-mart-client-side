@@ -61,7 +61,7 @@ const ManageItem = () => {
                     }
                 </div>
                 <div>
-                    <button onClick={handleAddInventory} className='btn_2'>Add New Item</button>
+                    <button onClick={handleAddInventory} className='btn_2 mb-5'>Add New Item</button>
                 </div>
             </div>
         </div>
