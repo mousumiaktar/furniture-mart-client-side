@@ -29,7 +29,7 @@ const Login = () => {
         loading,
         error
       ] =useSignInWithEmailAndPassword(auth);
-
+      console.log(user);
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
       if(loading || sending){
@@ -43,10 +43,13 @@ const Login = () => {
    if (error) {
     errorItem=<p className='text-danger'>Error: {error?.message}</p>  
   }
+
+  // HANDLE EMAIL PASSWORD LOGIN
    const handleSubmit = async event => {
      event.preventDefault();
      const email = emailRef.current.value;
      const password = passwordRef.current.value;
+     console.log(email, password);
      
     await signInWithEmailAndPassword(email, password);
     const {data} = await axios.post('http://localhost:5000/login', {email});

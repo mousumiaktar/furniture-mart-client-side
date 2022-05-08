@@ -4,7 +4,6 @@ import './Inventory.css';
 
 const Inventory = ({ inventory }) => {
     const {_id, name, picture, body, quantity, price, suplier } = inventory;
-    console.log(inventory);
 
     const navigate = useNavigate();
     const navigateSingleInventory = id => {

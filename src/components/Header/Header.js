@@ -42,9 +42,11 @@ const Header = () => {
                                 Login
                             </Nav.Link>
                             }
-                            <Nav.Link as={Link} to="/register">
+                            {
+                                !user &&
+                                <Nav.Link as={Link} to="/register">
                                 Register
-                            </Nav.Link>
+                            </Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

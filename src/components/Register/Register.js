@@ -23,9 +23,9 @@ const Register = () => {
     return <LoadingPage></LoadingPage>
   }
 
-  if (user) {
-    console.log('user', user);
-  }
+  // if (user) {
+  //   console.log('user', user);
+  // }
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -35,7 +35,6 @@ const Register = () => {
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    console.log('Updated profile');
 
     navigate('/home')
   };

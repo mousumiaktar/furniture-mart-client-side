@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const ManageAllItems = ({inventory}) => {
     const {_id, name, picture, body, quantity, price, suplier } = inventory;
-    console.log(inventory);
 
     const navigate = useNavigate();
     const navigateSingleInventory = id => {

@@ -7,7 +7,7 @@ import LoadingPage from '../LoadingPage/LoadingPage';
 const RequireAuth = ({children}) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
-    
+    console.log(user);
     if(loading){
       return <LoadingPage></LoadingPage>
     }

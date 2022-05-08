@@ -9,7 +9,7 @@ const SingleInventory = () => {
     const [inventory, setInventory] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${inventoryId}`
+        const url = `https://furniture-mart-server-side.herokuapp.com/inventory/${inventoryId}`
 
         fetch(url)
             .then(res => res.json())
@@ -33,7 +33,7 @@ const SingleInventory = () => {
             picture: inventory.picture,
             _id: inventory._id
         };
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://furniture-mart-server-side.herokuapp.com/inventory/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -43,7 +43,6 @@ const SingleInventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setInventory(updateStock);
             })
     }
@@ -52,7 +51,6 @@ const SingleInventory = () => {
     const stockUpdate = (event) => {
         event.preventDefault()
         const newStock = stockRef.current.value;
-        console.log(newStock);
         const updateStock = {
             quantity: parseInt(inventory.quantity) + parseInt(newStock),
             name: inventory.name,
@@ -64,7 +62,7 @@ const SingleInventory = () => {
         };
 
         // send data
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
+        const url = `https://furniture-mart-server-side.herokuapp.com/inventory/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -74,7 +72,6 @@ const SingleInventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setInventory(updateStock);
             })
         event.target.reset()

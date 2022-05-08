@@ -6,20 +6,16 @@ import './MyItems.css';
 
 const MyItems = () => {
     const [inventories, setInventories] = useState([]);
-    console.log(inventories);
-    // ===========================================
         const [user] =useAuthState(auth);
-    // ===========================================
     const handleButton = id => {
         const proceed = window.confirm('Do you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://furniture-mart-server-side.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const remaining = inventories.filter(inventory => inventory._id !== id);
                     setInventories(remaining);
                 });
@@ -27,11 +23,10 @@ const MyItems = () => {
         }
     }
 
-// ============================================
     useEffect( () => {
         const getItems = async() =>{
             const email = user.email;
-            const url = `http://localhost:5000/inventories?email=${email}`;
+            const url = `https://furniture-mart-server-side.herokuapp.com/inventories?email=${email}`;
             if(email){
                 const {data} = await axios.get(url, {
                     headers: {
@@ -43,7 +38,7 @@ const MyItems = () => {
         }
         getItems();
     },[user])
-// ============================================
+
 
 
 

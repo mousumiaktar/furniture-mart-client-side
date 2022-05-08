@@ -9,8 +9,7 @@ const AddInventory = () => {
     const email = user.email
     const onSubmit = data => { 
         const newData = {...data, email};
-        console.log(newData);
-        const url = `http://localhost:5000/inventory`;
+        const url = `https://furniture-mart-server-side.herokuapp.com/inventory`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -20,7 +19,6 @@ const AddInventory = () => {
         })
         .then(res=> res.json())
         .then(result =>{
-            console.log(result);
         })
     };
     return (
