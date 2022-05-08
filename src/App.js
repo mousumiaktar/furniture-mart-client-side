@@ -14,6 +14,7 @@ import AddInventory from './components/AddInventory/AddInventory';
 import ManageItem from './components/ManageItem/ManageItem';
 import MyItems from './components/MyItems/MyItems';
 import { ToastContainer } from 'react-toastify';
+import Faq from './components/Faq/Faq';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/faq" element={<Faq></Faq>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/sociallogin" element={<SocialLogin></SocialLogin>}></Route>
