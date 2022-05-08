@@ -5,6 +5,6 @@
 * get method post  method, and put put method.
 * The framework which is used is react bootstrap.
 * This site is about to a furniture warehouse.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [https://fashion-mart-6b696.web.app/]
 
 
